@@ -1,6 +1,10 @@
 ﻿Copyright
 ---------
 
+Filcheen Project:
+
+  Copyright (C) 2012 ikaudon <http://twitter.com/ikaudon_>
+
 OpenTween Project:
 
   Copyright (C) 2011 kim_upsilon <kim.upsilon@bucyou.net>
@@ -9,7 +13,6 @@ OpenTween Project:
   Copyright (C) 2011 tigree4th <crerish@gmail.com>
   Copyright (C) 2012 shogo82148 <shogo82148@gmail.com>
   Copyright (C) 2012 ANIKITI <brotherwood@users.sourceforge.jp>
-  Copyright (C) 2012 the40san <oss.ma40@gmail.com>
 
 Tween Authors:
 
@@ -39,28 +42,7 @@ License
 Icons
 -----
 
-  Copyright (C) 2012 抹花 / @matsukaaaa
-
-  This program includes LGPL'ed icons listed below:
-
-    OpenTween/Resources/3b.ico
-    OpenTween/Resources/4b.ico
-    OpenTween/Resources/5b.ico
-    OpenTween/Resources/5g.ico
-    OpenTween/Resources/5r.ico
-    OpenTween/Resources/5y.ico
-    OpenTween/Resources/6b.ico
-    OpenTween/Resources/6g.ico
-    OpenTween/Resources/InitialImage.png
-    OpenTween/Resources/LogoImage.png
-    OpenTween/Resources/MultiMediaImage.png
-    OpenTween/Resources/re.ico
-    OpenTween/Resources/re2.ico
-    OpenTween/Resources/re3.ico
-    OpenTween/Resources/re4.ico
-
-  They were originally downloaded from
-  https://github.com/opentween/OpenTween-icons.
+  Copyright (C) 2012 ikaudon <http://twitter.com/ikaudon_>
 
   The complete text of the GNU Lesser General Public License version 3 can be
   found in the `LICENSE.LGPL-3' file.

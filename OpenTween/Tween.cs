@@ -849,6 +849,7 @@ namespace OpenTween
             SettingDialog.UserstreamPeriodInt = _cfgCommon.UserstreamPeriod;
             SettingDialog.OpenUserTimeline = _cfgCommon.OpenUserTimeline;
             SettingDialog.ListDoubleClickAction = _cfgCommon.ListDoubleClickAction;
+            SettingDialog.ListClickAction = _cfgCommon.ListClickAction;
             SettingDialog.UserAppointUrl = _cfgCommon.UserAppointUrl;
             SettingDialog.HideDuplicatedRetweets = _cfgCommon.HideDuplicatedRetweets;
 
@@ -6380,7 +6381,7 @@ namespace OpenTween
                 if (Modifier == ModifierState.Shift ||
                     Modifier == ModifierState.None)
                 {
-                    if (KeyCode == Keys.F)
+                    if (KeyCode == Keys.D)
                     {
                         SendKeys.Send("{PGDN}");
                         return true;
@@ -6400,6 +6401,9 @@ namespace OpenTween
                     //フォーカス関係なし
                     switch (KeyCode)
                     {
+                        case Keys.F:
+                            FavoriteChange(true);
+                            return true;
                         case Keys.F1:
                             OpenApplicationWebsite();
                             return true;
@@ -7689,6 +7693,38 @@ namespace OpenTween
 
         private void MyList_MouseClick(object sender, MouseEventArgs e)
         {
+            Point formClientCurPos = this.PointToClient(Cursor.Position);
+            if (formClientCurPos.X < 200)
+            {
+                switch (SettingDialog.ListClickAction)
+                {
+                    case 0:
+                        MakeReplyOrDirectStatus();
+                        break;
+                    case 1:
+                        FavoriteChange(true);
+                        break;
+                    case 2:
+                        if (_curPost != null)
+                            ShowUserStatus(_curPost.ScreenName, false);
+                        break;
+                    case 3:
+                        ShowUserTimeline();
+                        break;
+                    case 4:
+                        ShowRelatedStatusesMenuItem_Click(null, null);
+                        break;
+                    case 5:
+                        MoveToHomeToolStripMenuItem_Click(null, null);
+                        break;
+                    case 6:
+                        StatusOpenMenuItem_Click(null, null);
+                        break;
+                    case 7:
+                        //動作なし
+                        break;
+                }
+            }
             _anchorFlag = false;
         }
 
@@ -7891,6 +7927,7 @@ namespace OpenTween
                 _cfgCommon.ListCountApi = SettingDialog.ListCountApi;
                 _cfgCommon.UseImageService = ImageServiceCombo.SelectedIndex;
                 _cfgCommon.ListDoubleClickAction = SettingDialog.ListDoubleClickAction;
+                _cfgCommon.ListClickAction = SettingDialog.ListClickAction;
                 _cfgCommon.UserAppointUrl = SettingDialog.UserAppointUrl;
                 _cfgCommon.HideDuplicatedRetweets = SettingDialog.HideDuplicatedRetweets;
                 _cfgCommon.IsPreviewFoursquare = SettingDialog.IsPreviewFoursquare;
@@ -8216,6 +8253,7 @@ namespace OpenTween
 
         private void MakeReplyOrDirectStatus(bool isAuto = true, bool isReply = true, bool isAll = false)
         {
+            FavoriteChange(true);
             //isAuto:true=先頭に挿入、false=カーソル位置に挿入
             //isReply:true=@,false=DM
             if (!StatusText.Enabled) return;
@@ -10855,6 +10893,7 @@ namespace OpenTween
 
         private void doReTweetUnofficial()
         {
+            FavoriteChange(true);
             //RT @id:内容
             if (this.ExistCurrentPost)
             {
@@ -10883,6 +10922,7 @@ namespace OpenTween
 
         private void doReTweetOfficial(bool isConfirm)
         {
+            FavoriteChange(true);
             //公式RT
             if (this.ExistCurrentPost)
             {
@@ -11465,6 +11505,7 @@ namespace OpenTween
 
         private void doQuote()
         {
+            FavoriteChange(true);
             //QT @id:内容
             //返信先情報付加
             if (this.ExistCurrentPost)

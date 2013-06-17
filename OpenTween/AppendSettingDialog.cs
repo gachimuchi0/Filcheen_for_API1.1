@@ -485,6 +485,7 @@ namespace OpenTween
                 ListCountApi = int.Parse(ListTextCountApi.Text);
                 OpenUserTimeline = CheckOpenUserTimeline.Checked;
                 ListDoubleClickAction = ListDoubleClickActionComboBox.SelectedIndex;
+                ListClickAction = ListClickActionComboBox.SelectedIndex;
                 UserAppointUrl = UserAppointUrlText.Text;
                 this.HideDuplicatedRetweets = this.HideDuplicatedRetweetsCheck.Checked;
                 this.IsPreviewFoursquare = this.IsPreviewFoursquareCheckBox.Checked;
@@ -888,6 +889,7 @@ namespace OpenTween
             ListTextCountApi.Enabled = UseChangeGetCount.Checked;
             CheckOpenUserTimeline.Checked = OpenUserTimeline;
             ListDoubleClickActionComboBox.SelectedIndex = ListDoubleClickAction;
+            ListClickActionComboBox.SelectedIndex = ListClickAction;
             UserAppointUrlText.Text = UserAppointUrl;
             this.HideDuplicatedRetweetsCheck.Checked = this.HideDuplicatedRetweets;
             this.IsPreviewFoursquareCheckBox.Checked = this.IsPreviewFoursquare;
@@ -1625,6 +1627,7 @@ namespace OpenTween
 
         public string EventSoundFile { get; set; }
         public int ListDoubleClickAction { get; set; }
+        public int ListClickAction { get; set; }
         public string UserAppointUrl { get; set; }
 
         private void ComboBoxAutoShortUrlFirst_SelectedIndexChanged(object sender, EventArgs e)

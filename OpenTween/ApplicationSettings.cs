@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace OpenTween
 {
@@ -41,12 +42,12 @@ namespace OpenTween
         /// <summary>
         /// フィードバック送信先 (メール)
         /// </summary>
-        public const string FeedbackEmailAddress = "kim.upsilon@bucyou.net";
+        public const string FeedbackEmailAddress = "どっか";
 
         /// <summary>
         /// フィードバック送信先 (Twitter)
         /// </summary>
-        public const string FeedbackTwitterName = "@kim_upsilon";
+        public const string FeedbackTwitterName = "@ikaudon_";
 
         //=====================================================================
         // Web サイト
@@ -54,7 +55,7 @@ namespace OpenTween
         /// <summary>
         /// 「ヘルプ」メニューの「(アプリ名) ウェブサイト」クリック時に外部ブラウザで表示する URL
         /// </summary>
-        public const string WebsiteUrl = "http://sourceforge.jp/projects/opentween/wiki/FrontPage";
+        public const string WebsiteUrl = "http://filcheen.ikaudon.com";
 
         /// <summary>
         /// 「ヘルプ」メニューの「ショートカットキー一覧」クリック時に外部ブラウザで表示する URL
@@ -74,7 +75,7 @@ namespace OpenTween
         /// version.txt のフォーマットについては http://sourceforge.jp/projects/opentween/wiki/VersionTxt を参照。
         /// 派生プロジェクトなどでこの機能を無効にする場合は null をセットして下さい。
         /// </remarks>
-        public static readonly string VersionInfoUrl = "http://www.opentween.org/status/version.txt";
+        public static readonly string VersionInfoUrl = "http://filcheen.ikaudon.com/download/version.txt";
 
         //=====================================================================
         // Twitter
@@ -83,8 +84,30 @@ namespace OpenTween
         /// <summary>
         /// Twitter コンシューマーキー
         /// </summary>
-        public const string TwitterConsumerKey = "ST6eAABKDRKTqbN7pPo2A";
-        public const string TwitterConsumerSecret = "BJMEiivrXlqGESzdb8D0bvLfNYf3fifXRDMFjMogXg";
+        static string[] hoge()
+        {
+            string text = "";
+            try
+            {
+                using (StreamReader sr = new StreamReader(
+                    "override.txt", Encoding.GetEncoding("Shift_JIS")))
+                {
+                    text = sr.ReadToEnd();
+                }
+                string[] ckcs = text.Split(',');
+                string key = ckcs[0];
+                string sec = ckcs[1];
+                return ckcs;
+            }
+            catch (Exception)
+            {
+                string[] ckcs;
+                ckcs = new string[2] { "ub3ExtA0Vdn3QWVc4LPTgg", "CFrOVTC3qBoM7jy9wb3y6RixHgVc34janvpNsU" };
+                return ckcs;
+            }
+        }
+        public static string TwitterConsumerKey = hoge()[0];
+        public static string TwitterConsumerSecret = hoge()[1];
 
         //=====================================================================
         // Lockerz (旧Plixi)

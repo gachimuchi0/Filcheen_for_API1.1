@@ -214,6 +214,7 @@ namespace OpenTween
         public int ListCountApi = 100;
         public int UseImageService = 0;
         public int ListDoubleClickAction = 0;
+        public int ListClickAction = 7;
         public string UserAppointUrl = "";
         public bool HideDuplicatedRetweets = false;
         public bool IsPreviewFoursquare = false;

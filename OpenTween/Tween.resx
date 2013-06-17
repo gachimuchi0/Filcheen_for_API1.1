@@ -570,6 +570,9 @@
   <data name="&gt;&gt;FavoriteRetweetMenuItem.Name" xml:space="preserve">
     <value>FavoriteRetweetMenuItem</value>
   </data>
+  <data name="FavoriteRetweetMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;CreateTbMenuItem.Name" xml:space="preserve">
     <value>CreateTbMenuItem</value>
   </data>
@@ -623,6 +626,9 @@
   </data>
   <data name="&gt;&gt;FavoriteRetweetUnofficialMenuItem.Name" xml:space="preserve">
     <value>FavoriteRetweetUnofficialMenuItem</value>
+  </data>
+  <data name="FavoriteRetweetUnofficialMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ImageSelectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1199,6 +1205,9 @@
   </data>
   <data name="ReplyOpMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+R</value>
+  </data>
+  <data name="ReplyOpMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+R(Enter)</value>
   </data>
   <data name="&gt;&gt;ContextMenuUserPicture.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3974,6 +3983,9 @@
   </data>
   <data name="FavOpMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
+  </data>
+  <data name="FavOpMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>F(Crtl+S)</value>
   </data>
   <data name="TinyURLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 24</value>
